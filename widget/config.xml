@@ -57,6 +57,9 @@
 	<permission name="bootCompleted" />
 
 	<permission name="hardware" />
-
+  <feature name="tencentPush">
+      <param name="android_accessId" value="2100281914" />
+      <param name="android_accessKey" value="AKPK8BP5818M" />
+  </feature>
 </widget>
 
