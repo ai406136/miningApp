@@ -17,10 +17,12 @@
 </body>
 <script src="./script/api.js"></script>
 <script>
-  if (api) {
-    api.setStatusBarStyle({
-      style: 'light'
-    })
+  apiready = function () {
+    if (api) {
+      api.setStatusBarStyle({
+        style: 'light'
+      })
+    }
   }
 </script>
 
