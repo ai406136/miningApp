@@ -4,21 +4,49 @@
 <head>
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width,initial-scale=1">
-  <meta name=format-detection content="telephone=no">
+  <meta name=format-detection content="telephone=yes">
   <title>mining</title>
-  <link href=./static/css/app.c29efcdf66bcd5122557b58810e83875.css rel=stylesheet>
+  <link href=./static/css/app.d6f9110632cc49dba7846ab44ed343e9.css rel=stylesheet>
 </head>
 
 <body>
   <div id=app></div>
-  <script type=text/javascript src=./static/js/manifest.dbbef25f0e9ab803e0bf.js></script>
+  <script type=text/javascript src=./static/js/manifest.45842507eb51870ac03a.js></script>
   <script type=text/javascript src=./static/js/vendor.81626dc569f8e640176f.js></script>
-  <script type=text/javascript src=./static/js/app.acda563bd4ec44d3eb73.js></script>
+  <script type=text/javascript src=./static/js/app.0b6afbd2b1f461d30fe0.js></script>
 </body>
 <script src=./script/api.js></script>
 <script>
+  let btn = null
+  if (!btn) {
+    setInterval(() => {
+      console.log(document.querySelector('#fenx'))
+    }, 1600)
+  }
   apiready = function () {
+    function openApp() {
+      api.openApp({
+        androidPkg: 'android.intent.action.VIEW',
+        mimeType: 'text/html',
+        uri: 'http://www.baidu.com'
+      }, function (ret, err) {
+        var msg = JSON.stringify(ret)
+        api.alert({
+          title: 'openApp',
+          msg: msg,
+          buttons: ['确定']
+        })
+      })
+    }
     if (api) {
+      if (!btn) {
+        setInterval(() => {
+          btn = document.querySelector('#fenx')
+          setTimeout(() => {
+            btn.addEventListener('click', openApp)
+          }, 50)
+        }, 1600)
+      }
       api.setStatusBarStyle({
         style: 'light'
       })
