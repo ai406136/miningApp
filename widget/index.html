@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><title>mining</title><link href=./static/css/app.178bf88f71ea2fa6814212dec307e92a.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.bcb4bce2156bd21d89a8.js></script><script type=text/javascript src=./static/js/vendor.81626dc569f8e640176f.js></script><script type=text/javascript src=./static/js/app.0b6afbd2b1f461d30fe0.js></script></body><script src=./script/api.js></script><script>let btn = null
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><title>mining</title><link href=./static/css/app.2029cf2efe0ed760bacd0ffefe13ac14.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.9c747ee83e2921713008.js></script><script type=text/javascript src=./static/js/vendor.81626dc569f8e640176f.js></script><script type=text/javascript src=./static/js/app.0b6afbd2b1f461d30fe0.js></script></body><script src=./script/api.js></script><script>let btn = null
   // if (!btn) {
   // setInterval(() => {
   //   console.log(document.querySelector('#fenx'))
@@ -6,18 +6,27 @@
   // }
   apiready = function () {
     function openApp() {
-      api.openApp({
-        androidPkg: 'android.intent.action.VIEW',
-        mimeType: 'text/html',
-        uri: 'http://www.baidu.com'
-      }, function (ret, err) {
-        var msg = JSON.stringify(ret)
-        api.alert({
-          title: 'openApp',
-          msg: msg,
-          buttons: ['确定']
+      if (api.systemType == 'android') {
+        api.openApp({
+          androidPkg: 'android.intent.action.VIEW',
+          mimeType: 'text/html',
+          uri: 'http://www.baidu.com'
+        }, function (ret, err) {
+          console.log(11)
+          // var msg = JSON.stringify(ret)
+          // api.alert({
+          //   title: 'openApp',
+          //   msg: msg,
+          //   buttons: ['确定']
+          // })
         })
-      })
+      } else {
+        api.openApp({
+          iosUrl: 'http://www.baidu.com'
+        }, function (ret, err) {
+          console.log(11)
+        })
+      }
     }
     if (api) {
       if (!btn) {
