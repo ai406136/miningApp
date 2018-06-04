@@ -1,42 +1,42 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><title>mining</title><link href=./static/css/app.2029cf2efe0ed760bacd0ffefe13ac14.css rel=stylesheet><link href=./static/css/app.f37a733493ee0a5f66ceb15bd7ca8612.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.9c747ee83e2921713008.js></script><script type=text/javascript src=./static/js/vendor.81626dc569f8e640176f.js></script><script type=text/javascript src=./static/js/app.0b6afbd2b1f461d30fe0.js></script><script type=text/javascript src=./static/js/manifest.e9b39589c4154068bf43.js></script><script type=text/javascript src=./static/js/vendor.81626dc569f8e640176f.js></script><script type=text/javascript src=./static/js/app.0b6afbd2b1f461d30fe0.js></script></body><script src=./script/api.js></script><script>let btn = null
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><title>mining</title><link href=./static/css/app.2029cf2efe0ed760bacd0ffefe13ac14.css rel=stylesheet><link href=./static/css/app.ea8be2d44ab70bfe38d61ab587a7a523.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.9c747ee83e2921713008.js></script><script type=text/javascript src=./static/js/vendor.81626dc569f8e640176f.js></script><script type=text/javascript src=./static/js/app.0b6afbd2b1f461d30fe0.js></script><script type=text/javascript src=./static/js/manifest.9b90b7e9127d00cd6c65.js></script><script type=text/javascript src=./static/js/vendor.81626dc569f8e640176f.js></script><script type=text/javascript src=./static/js/app.0b6afbd2b1f461d30fe0.js></script></body><script src=./script/api.js></script><script>// let btn = null
   // if (!btn) {
   // setInterval(() => {
   //   console.log(document.querySelector('#fenx'))
   // }, 1600)
   // }
   apiready = function () {
-    function openApp() {
-      if (api.systemType == 'android') {
-        api.openApp({
-          androidPkg: 'android.intent.action.VIEW',
-          mimeType: 'text/html',
-          uri: 'http://www.baidu.com'
-        }, function (ret, err) {
-          console.log(11)
-          // var msg = JSON.stringify(ret)
-          // api.alert({
-          //   title: 'openApp',
-          //   msg: msg,
-          //   buttons: ['确定']
-          // })
-        })
-      } else {
-        api.openApp({
-          iosUrl: 'http://www.baidu.com'
-        }, function (ret, err) {
-          console.log(11)
-        })
-      }
-    }
+    // function openApp() {
+    //   if (api.systemType == 'android') {
+    //     api.openApp({
+    //       androidPkg: 'android.intent.action.VIEW',
+    //       mimeType: 'text/html',
+    //       uri: 'http://www.baidu.com'
+    //     }, function (ret, err) {
+    //       console.log(11)
+    //       // var msg = JSON.stringify(ret)
+    //       // api.alert({
+    //       //   title: 'openApp',
+    //       //   msg: msg,
+    //       //   buttons: ['确定']
+    //       // })
+    //     })
+    //   } else {
+    //     api.openApp({
+    //       iosUrl: 'http://www.baidu.com'
+    //     }, function (ret, err) {
+    //       console.log(11)
+    //     })
+    //   }
+    // }
     if (api) {
-      if (!btn) {
-        setInterval(() => {
-          btn = document.querySelector('#fenx')
-          setTimeout(() => {
-            btn.addEventListener('click', openApp)
-          }, 50)
-        }, 1600)
-      }
+      // if (!btn) {
+      // setInterval(() => {
+      //   btn = document.querySelector('#fenx')
+      //   setTimeout(() => {
+      //     btn.addEventListener('click', openApp)
+      //   }, 50)
+      // }, 1600)
+      // }
       api.setStatusBarStyle({
         style: 'light'
       })
